@@ -1,9 +1,10 @@
-#makeCacheMatrix creates a special "vector", which is really a list containing a function to
+#makeCacheMatrix creates a special "matrix", which is really a list containing a function to
 #set the value of the matrix
 #get the value of the matrix
-#set the value of the matrix inverse
+#set the value of the matrix inverse--this caches the result of a lengthy computation
 #get the value of the matrix inverse from the cache (including NULL values, on first use)
 #Note that the set function can reset the underlying matrix
+
 
 makeCacheMatrix <- function(x = matrix()) {
     mInverse <- NULL
@@ -41,6 +42,7 @@ cacheSolve <- function(x, ...) {
 }
 
 
+#Something possibly extra
 #The instructions told us to return the cached value if the underlying
 #matrix hasn't changed, but doesn't describe desired behavior if it has.
 #I implemented an update-and-recache approach
